@@ -9,14 +9,15 @@ const typeDefs = gql`
     invoices: [Invoice]!
     agreement: Agreement!
     order: Order!
-    sites: [Site]
   }
 
   # "ContractType"
+  # put service on invoice!
   type Contract {
     id: ID
     service: String
     term_length: Int
+    sites: [Site]
   }
 
   # "InvoiceType"
@@ -50,10 +51,8 @@ const typeDefs = gql`
   # "SiteType"
   type Site {
     id: ID
-    project_summary: String
-    scope_of_work: String
-    term_length: Int
-    hourly_rate: Float
+    name: String
+    monthly_cost: Float
     contract_id: ID
   }
 `;

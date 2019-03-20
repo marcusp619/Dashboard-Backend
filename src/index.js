@@ -8,11 +8,24 @@ const app = express();
 const environment = process.env.NODE_ENV || 'development';
 const configuration = require('../knexfile')[environment];
 const database = require('knex')(configuration);
+const store = database;
+
+const ContractAPI = require('./datasources/contract');
+const SiteAPI = require('./datasources/site');
+const AgreementAPI = require('./datasources/agreement');
+const OrderAPI = require('./datasources/order');
+const InvoiceAPI = require('./datasources/invoice');
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  dataSources: () => ({})
+  dataSources: () => ({
+    contractAPI: new ContractAPI(store),
+    siteAPI: new SiteAPI(store),
+    agreementAPI: new AgreementAPI(store),
+    orderAPI: new OrderAPI(store),
+    invoiceAPI: new InvoiceAPI(store)
+  })
 });
 
 server.applyMiddleware({ app });
