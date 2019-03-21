@@ -22,6 +22,10 @@ CREATE DATABASE gci;
 
 1: Git Clone [Backend Server](https://github.com/marcusp619/Liberty-backend)
 
-2: cd into the backend server project directory and run npm install
+2: cd into the backend server project directory and run: npm install
+
+3: in terminal run: knex migrate:latest
+
+4: then run: knex seed:run 
 
 3: then run npm start
