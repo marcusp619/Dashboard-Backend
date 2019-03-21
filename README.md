@@ -10,6 +10,8 @@
 
 4: GraphQL
 
+5: PostgreSQL
+
 ## Steps to Install and Run
 
 1: Git Clone [Backend Server](https://github.com/marcusp619/Liberty-backend)
