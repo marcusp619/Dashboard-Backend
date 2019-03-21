@@ -28,4 +28,4 @@ CREATE DATABASE gci;
 
 4: then run: knex seed:run 
 
-3: then run npm start
+5: then run npm start
